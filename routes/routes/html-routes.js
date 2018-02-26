@@ -1,6 +1,6 @@
 var path = require("path");
 
-//TODO CHECK that path name right or are we starting with public?
+//TODO CHECK that these paths work, or is it just the ones in html files
 
 module.exports = function(app){
   //index route loads index.html
