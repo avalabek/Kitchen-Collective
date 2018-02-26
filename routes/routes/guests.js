@@ -17,18 +17,34 @@ module.exports = function(app, db) {
   });
 });
 
-//POST guests would we need this?
+//POST guests 
 app.post("/guests", function(req,res){
   var name = req.body.name;
   var event = req.body.event;
+  var email = req.body.email;
+  var phone = req.body.phone;
+
   db.guests.create({
     //verify that these are in db
     name: name,
-    event: event
+    event: event,
+    email: email,
+    phone: phone
   })
   .then(function(newGuest){
     res.json(newGuest);
   })
 });
+//DELETE single guest
+app.delete("/guest/:id", function(req,res){
+  var id= req.params.id;
 
+  db.guests.destroy({
+    where: {id: id}
+  })
+  .then(function(deletedGuest){
+    res.json(deletedGuest);
+  });
+});
+//when a new guest is posted, number must also be taken from event maximum
 };//end module.exports
