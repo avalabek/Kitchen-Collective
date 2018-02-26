@@ -19,9 +19,10 @@ app.use(bodyParser.json());
 
 app.use(express.static("public"));
 
-
-// require("./routes/api-routes.js")(app);
-
+require("./routes/routes/html-routes.js")(app);
+require("./routes/routes/hosts.js")(app);
+// require("./routes/routes/events.js")(app);
+// require("./routes/routes/guests.js")(app);
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {

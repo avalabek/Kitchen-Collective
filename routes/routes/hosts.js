@@ -17,24 +17,29 @@ module.exports = function (app, db){
         res.json(event);
       });
   });
-
+//changed this to match input on page
   //POST one host so when host is posted
   //event also needs to be posted. 
   app.post("/host", function(req, res) {
-    var name = req.body.name;
-    var event = req.body.event;
-    var address = req.body.address;
-    var phone = req.body.phone;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var cuisine = req.body.cuisine;
     var email = req.body.email;
+    var address = req.body.address;
+    var date = req.body.date;
+    var peoplecount = req.body.peoplecount;
+    
     
     db.hosts
       .create({
         //verify that these are in db
-        name: name,
-        event: event,
+        firstname: firstname,
+        lastname: lastname,
+        cuisine: cuisine,
+        email: email,
         address: address,
-        phone: phone,
-        email: email
+        date: date,
+        peoplecount: peoplecount
       })
       .then(function(newHost) {
         res.json(newHost);

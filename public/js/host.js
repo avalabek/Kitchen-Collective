@@ -1,4 +1,4 @@
-
+$(function(){
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -21,9 +21,12 @@
     aftershow: function(){} //Function for after opening timepicker
   });
 
-  $("#submit").on("click", function(){
-
-      var hostData = {
+  $("#submit").on("click", function(event){
+    event.preventDefault();
+        
+    var id = $(this).data("id");
+      
+    var hostData = {
     firstname: $("#first_name").val(),
         lastname:$("#last_name").val(),
         cuisine:$("#cuisine").val(),
@@ -34,7 +37,23 @@
        };
 
        console.log(hostData);
-
+    
+       // Send the PUT request.
+      
+      
+     $.ajax("/api/hosts/" + id, {
+      type: "PUT",
+      data: hostData
+    }).then(
+      function (res) {
+        console.log(res);
+        //the below isn't console.logging
+        console.log("added new host to host: ", hostData);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+      );
+//clear form
        $("#first_name").val(""),
         $("#last_name").val(""),
         $("#cuisine").val(""),
@@ -42,9 +61,23 @@
         $("#address").val(""),
         $("#date").val(""),
         $("#peoplecount").val("")
+
+
+ //send the POST request
+ $.ajax("/api/hosts", {
+   type: "POST",
+   data: hostData
+
+ }).then(function(){
+   console.log("created new host++++++++========");
+    
+  location.reload();
+  });       
   });
 
+ 
 
+});//end of iife
 
 
 

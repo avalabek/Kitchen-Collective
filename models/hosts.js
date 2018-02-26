@@ -10,20 +10,27 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: DataTypes.UUIDV1,
         primaryKey: true
       },
-      event: {
+      firstname: {
         type: DataTypes.STRING
       },
 
-      name: {
+      lastname: {
+        type: DataTypes.STRING
+      },
+      cuisine: {
+        type: DataTypes.STRING
+        
+      },
+      email: {
         type: DataTypes.STRING
       },
       address: {
         type: DataTypes.STRING
       },
-      phone: {
-        type: DataTypes.INTEGER
+      date: {
+        type: DataTypes.STRING
       },
-      email: {
+      peoplecount: {
         type: DataTypes.INTEGER
       }
       //TODO check date/time datatypes
