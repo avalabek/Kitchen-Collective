@@ -9,7 +9,7 @@ module.exports = function(app, db) {
   //GET event by date
   app.get("/events", function(req, res) {
     var date = req.params.id;
-    db.host
+    db.events
       .find({
         where: { date: date }
       })
@@ -20,16 +20,26 @@ module.exports = function(app, db) {
 
   //POST events
   app.post("/events", function(req, res) {
-    var name = req.body.name;
-    var event = req.body.event;
-    db.guests
+    var host = req.body.charity;
+    var cuisine = req.body.name;
+    var date = req.body.event;
+    var time = req.body.time;
+    var number = req.body.number;
+    var charity = req.body.charity;
+    
+
+    db.events
       .create({
         //verify that these are in db
-        name: name,
-        event: event
+        host: host,
+        cuisine: cuisine,
+        date: date,
+        time: time,
+        number: number,
+        charity: charity
       })
-      .then(function(newGuest) {
-        res.json(newGuest);
+      .then(function(newEvent) {
+        res.json(newEvent);
       });
   });
 }; //end module.exports
