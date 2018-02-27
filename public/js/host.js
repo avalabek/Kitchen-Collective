@@ -46,7 +46,7 @@ $(function(){
       function (res) {
         console.log(res);
         //the below isn't console.logging
-        console.log("added new host to host: ", hostData);
+        console.log("added new host to host: ", newHost);
         // Reload the page to get the updated list
         location.reload();
       }

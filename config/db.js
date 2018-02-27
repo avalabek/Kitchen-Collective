@@ -24,10 +24,10 @@ var sequelize = new Sequelize("sequelize_kitchen", "root", "root",{
   // }
 );
 module.exports = sequelize;
-//   var db = {};
+  //  var db = {};
 
-//  db.Sequelize = Sequelize;
-// db.sequelize = sequelize;
+  // db.Sequelize = Sequelize;
+//  db.sequelize = sequelize;
 
 // // models==list all??
 // db.hosts = require ("../models/hosts.js")(sequelize,Sequelize);
