@@ -23,10 +23,8 @@ $(function(){
 
   $("#submit").on("click", function(event){
     event.preventDefault();
-        
-    var id = $(this).data("id");
       
-    var hostData = {
+    var newHost = {
     firstname: $("#first_name").val(),
         lastname:$("#last_name").val(),
         cuisine:$("#cuisine").val(),
@@ -36,14 +34,14 @@ $(function(){
         peoplecount:$("#peoplecount").val()
        };
 
-       console.log(hostData);
+       console.log(newHost);
     
        // Send the PUT request.
       
       
-     $.ajax("/api/hosts/" + id, {
+     $.ajax("/api/hosts/", {
       type: "PUT",
-      data: hostData
+      data: newHost
     }).then(
       function (res) {
         console.log(res);
@@ -66,7 +64,7 @@ $(function(){
  //send the POST request
  $.ajax("/api/hosts", {
    type: "POST",
-   data: hostData
+   data: newHost
 
  }).then(function(){
    console.log("created new host++++++++========");
