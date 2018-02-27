@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/donate", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/donate.html"));
+    res.sendFile(path.join(__dirname, "./public/donate.html"));
   });
 
 };
