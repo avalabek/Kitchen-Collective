@@ -16,5 +16,8 @@ module.exports = function(app){
   app.get("/host", function(req,res){
     res.sendFile(path.join(__dirname, "../../public/host.html"));
   });
-   
+  // //host route loads donate.html page do we have this?
+  // app.get("/donate", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "../../public/donate.html"));
+  // });
 };//end module.exports
