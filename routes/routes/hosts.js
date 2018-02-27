@@ -14,7 +14,7 @@ module.exports = function (app, db){
       res.render("index", hosts);
     });
   });
-  
+  //aren't these two doing the same
   //GET all hosts
   app.get ("/api/hosts", function (req,res){
     db.Hosts.findAll()
