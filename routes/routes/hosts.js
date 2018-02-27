@@ -1,6 +1,6 @@
-var express = require("express");
-var app = express.Router();
-var db = require("../../models/hosts.js");
+// var express = require("express");
+// var app = express.Router();
+// var db = require("../../models/hosts.js");
 
 module.exports = function (app, db){
 
@@ -36,7 +36,7 @@ module.exports = function (app, db){
 //changed this to match input on page
   //POST one host so when host is posted
   //event also needs to be posted. 
-  app.post("api/hosts", function(req, res) {
+  app.post("/api/hosts", function(req, res) {
     db.Hosts.create({
       firstname: req.body.firstname,
        lastname: req.body.lastname,

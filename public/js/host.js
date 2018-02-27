@@ -39,8 +39,8 @@ $(function(){
        // Send the PUT request.
       
       
-     $.ajax("/api/hosts/", {
-      type: "PUT",
+     $.ajax("/api/host/", {
+      type: "POST",
       data: newHost
     }).then(
       function (res) {

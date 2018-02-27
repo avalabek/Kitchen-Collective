@@ -1,6 +1,6 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/db.js");
-var DataTypes = require("sequelize/lib/data-types");
+// var Sequelize = require("sequelize");
+// var sequelize = require("../config/db.js");
+// var DataTypes = require("sequelize/lib/data-types");
 module.exports = function(sequelize, DataTypes) {
   var Hosts = sequelize.define(
     "Hosts",
