@@ -1,0 +1,82 @@
+#index-banner {
+	 background: url("../images/groupcooking.jpg");
+	 background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: rgba(255,0,0,10);
+     /*opacity: .4; */
+   /* /*height: 100em;*/
+}
+
+
+.navbar-fixed {position: absolute;z-index:999999999;}
+
+#logo {
+	font-family: 'Spectral SC', serif;
+	text-align: center;
+	color:white;
+	margin-top: 0px;
+
+}
+
+#navnames{
+	font-family: 'Spectral SC', serif;
+	
+
+}
+
+#logoimage{
+	text-align: center;
+}
+
+
+
+#banner{
+	font-family: 'Spectral SC', serif;
+	text-align: center;
+	
+
+}
+
+
+
+
+#mission {
+	text-align: center;
+	font-family: 'Spectral SC', serif;
+}
+
+#hosttitle{
+	text-align: center;
+	font-family: 'Spectral SC', serif;
+	margin-top: 30px;
+
+}
+
+#welcome {
+	text-align: center;
+	font-family: 'Spectral SC', serif;
+}
+
+#welcomediv{
+	margin:5px,30px,5px,30px;
+
+}
+
+
+
+
+#events {
+	text-align: center;
+	font-family: 'Spectral SC', serif;
+
+}
+
+#missionstatement { 
+	text-align: center;
+	
+ }
+
+ #form {
+ 	margin-top:50px;
+ }
+
