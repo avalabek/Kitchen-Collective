@@ -62,15 +62,15 @@ $(function(){
 
 
  //send the POST request
- $.ajax("/api/hosts", {
-   type: "POST",
-   data: newHost
+//  $.ajax("/api/hosts", {
+//    type: "POST",
+//    data: newHost
 
- }).then(function(){
-   console.log("created new host++++++++========");
+//  }).then(function(){
+//    console.log("created new host++++++++========");
     
-  location.reload();
-  });       
+//   location.reload();
+//   });       
   });
 
  
