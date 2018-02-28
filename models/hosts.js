@@ -2,34 +2,42 @@
 // var sequelize = require("../config/db.js");
 // var DataTypes = require("sequelize/lib/data-types");
 module.exports = function(sequelize, DataTypes) {
-  var Guests = sequelize.define(
-    "Guests",
+  var Hosts = sequelize.define(
+    "Hosts",
     {
       id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV1,
         primaryKey: true
       },
-      
-      first_name: {
+      firstname: {
         type: DataTypes.STRING
       },
-      last_name: {
+
+      lastname: {
         type: DataTypes.STRING
+      },
+      cuisine: {
+        type: DataTypes.STRING
+        
       },
       email: {
         type: DataTypes.STRING
       },
-      phone: {
+      address: {
+        type: DataTypes.STRING
+      },
+      date: {
+        type: DataTypes.STRING
+      },
+      peoplecount: {
         type: DataTypes.INTEGER
       }
-      
-      
       //TODO check date/time datatypes
     },
     {
       timestamps: false
     }
   );
-  return Guests;
+  return Hosts;
 };
