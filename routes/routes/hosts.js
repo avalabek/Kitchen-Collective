@@ -20,6 +20,7 @@ module.exports = function (app, db){
     db.Hosts.findAll()
     .then(function(hosts){
       res.json(hosts);
+      console.log("Are you seeing double?", hosts);
     });
   });
 //GET host by event
