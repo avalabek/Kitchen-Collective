@@ -14,10 +14,10 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING
       },
 
-      firstName: {
+      first_name: {
         type: DataTypes.STRING
       },
-      lastName: {
+      last_name: {
         type: DataTypes.STRING
       },
       email: {
