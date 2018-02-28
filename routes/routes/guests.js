@@ -2,28 +2,38 @@
 
 module.exports = function(app, db) {
   //GET all guests
-  app.get("/api/guests", function(req, res) {
-    db.Guests.findAll().then(function(guests) {
-      res.json(guests);
+  app.get("/", function(req, res) {
+    db.Guests.findAll()
+    .then(function(data) {
+      var guests = {
+        guests: data
+      };
+      console.log(guests);
+      res.render("index", guests);
     });
   });
 
-  //GET guests by event
-  app.get("/api/guests/:event", function(req,res){
+  
+  app.get("/api/guests", function(req,res){
     
-    db.Guests.find({
-      where: {
-        event: req.params.event
-      }
-    }).then(function(guests){
-    res.json(guests);
-  });
-});
-  app.post("/api/guests", function (req, res) {
-    db.Guests.create(req.body).then(function (guests) {
+    db.Guests.findAll()
+    .then(function(guests){
       res.json(guests);
     });
+      });
+
+  app.post("/api/guests", function (req, res) {
+    db.Guests.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      phone: req.body.phone
+    }).then(function (result) {
+      res.json(result);
+      console.log("New guest: ", req.body.first_name);
+    })
   });
+} //end module.exports
 //POST guests not sure if this is correct or above
 // app.post("/api/guests", function(req,res){
 //   var name = req.body.name;
@@ -43,15 +53,15 @@ module.exports = function(app, db) {
 //   })
 // });
 //DELETE single guest
-app.delete("/guest/:id", function(req,res){
-  var id= req.params.id;
+// app.delete("/guest/:id", function(req,res){
+//   var id= req.params.id;
 
-  db.guests.destroy({
-    where: {id: id}
-  })
-  .then(function(deletedGuest){
-    res.json(deletedGuest);
-  });
-});
-//when a new guest is posted, number must also be taken from event maximum
-};//end module.exports
+//   db.guests.destroy({
+//     where: {id: id}
+//   })
+//   .then(function(deletedGuest){
+//     res.json(deletedGuest);
+//   });
+// });
+// //when a new guest is posted, number must also be taken from event maximum
+// };//end module.exports
