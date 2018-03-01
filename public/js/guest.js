@@ -1,9 +1,13 @@
-$(function () {
+//$(function () {
+
+  $(document).ready(function(){
+    $('.slider').slider();
+    });
 
   
   $("#register").on("click", function (event) {
     event.preventDefault();
-
+    console.log("HERE");
     var newGuest = {
       first_name: $("#first_name").val(),
       last_name: $("#last_name").val(),
@@ -13,17 +17,33 @@ $(function () {
 
     console.log(newGuest);
 
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Send the PUT request.
 
 
-    $.ajax("/api/hosts/", {
+    $.ajax("/api/guests/", {
       type: "POST",
       data: newGuest
     }).then(
       function (res) {
         console.log(res);
         //the below isn't console.logging
-        console.log("added new guest: ", newHost);
+        console.log("added new guest: ", newGuest);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -50,7 +70,7 @@ $(function () {
 
 
 
-});//end of iife
+//});//end of iife
 
 
 
