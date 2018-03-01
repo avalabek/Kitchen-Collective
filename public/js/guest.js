@@ -1,6 +1,30 @@
 $(function () {
 
   
+
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+   
+    
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+
+    $('.carousel').carousel({
+    padding: 200   
+    
+});
+
+    autoplay()   
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+    }
+        
+  
+
+
+  
   $("#register").on("click", function (event) {
     event.preventDefault();
 
@@ -16,14 +40,14 @@ $(function () {
     // Send the PUT request.
 
 
-    $.ajax("/api/hosts/", {
+    $.ajax("/api/guests/", {
       type: "POST",
       data: newGuest
     }).then(
       function (res) {
         console.log(res);
         //the below isn't console.logging
-        console.log("added new guest: ", newHost);
+        console.log("added new guest: ", newGuest);
         // Reload the page to get the updated list
         location.reload();
       }

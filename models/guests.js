@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
       },
       phone: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       }
       
       

@@ -19,8 +19,10 @@ module.exports = function(app, db) {
     db.Guests.findAll()
     .then(function(guests){
       res.json(guests);
+      console.log("and again...", guests);
     });
       });
+
 
   app.post("/api/guests", function (req, res) {
     db.Guests.create({
