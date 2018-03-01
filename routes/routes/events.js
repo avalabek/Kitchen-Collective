@@ -1,45 +1,41 @@
-module.exports = function(app, db) {
+// var db = require("../models");
+
+module.exports = function (app, db) {
   //GET all events
-  app.get("/events", function(req, res) {
-    db.guests.findAll().then(function(events) {
-      res.json(events);
-    });
-  });
-
-  //GET event by date
-  app.get("/events", function(req, res) {
-    var date = req.params.id;
-    db.events
-      .find({
-        where: { date: date }
-      })
-      .then(function(event) {
-        res.json(event);
+  app.get("/", function (req, res) {
+    db.Events.findAll()
+      .then(function (data) {
+        var events = {
+          events: data
+        };
+        console.log(events);
+        res.render("index", events);
       });
   });
 
-  //POST events
-  app.post("/events", function(req, res) {
-    var host = req.body.charity;
-    var cuisine = req.body.name;
-    var date = req.body.event;
-    var time = req.body.time;
-    var number = req.body.number;
-    var charity = req.body.charity;
-    
 
-    db.events
-      .create({
-        //verify that these are in db
-        host: host,
-        cuisine: cuisine,
-        date: date,
-        time: time,
-        number: number,
-        charity: charity
-      })
-      .then(function(newEvent) {
-        res.json(newEvent);
+  app.get("/api/events", function (req, res) {
+
+    db.Events.findAll()
+      .then(function (events) {
+        res.json(events);
+        console.log("and again...", events);
       });
   });
-}; //end module.exports
+
+
+  app.post("/api/events", function (req, res) {
+    db.Events.create({
+      //now here we want the data to come from db, not req.body
+      event: req.body.cuisine,
+      cuisine: req.body.last_name,
+      date: req.body.email,
+      time: req.body.phone
+      number: req.body.number
+    }).then(function (result) {
+      res.json(result);
+      console.log("New event: ", req.body.cuisine);
+    })
+  });
+} //end module.exports
+//POST events not sure if

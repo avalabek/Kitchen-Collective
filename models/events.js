@@ -9,10 +9,7 @@ module.exports = function(sequelize, DataTypes){
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true
     },
-    event: {
-      type: DataTypes.STRING
-    },
-         
+             
     cuisine:{
       type: DataTypes.STRING
     },
@@ -24,10 +21,8 @@ module.exports = function(sequelize, DataTypes){
     },
     number: {
       type: DataTypes.INTEGER
-    },
-    charity: {
-      type: DataTypes.STRING
     }
+    
     //TODO check date/time datatypes
   },{
     timestamps: false
