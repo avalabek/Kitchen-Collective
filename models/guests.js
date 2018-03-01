@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: DataTypes.UUIDV1,
         primaryKey: true
       },
+      event: {
+      type: DataTypes.STRING
+      },
       
       first_name: {
         type: DataTypes.STRING
