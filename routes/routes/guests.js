@@ -34,6 +34,23 @@ module.exports = function(app, db) {
       console.log("New guest: ", req.body.first_name);
     })
   });
+
+  app.get("/api/guests", function (req, res) {
+       db.Author.findAll({
+      where: {
+        event: "Lebanese"
+      }
+    }).then(function (data) {
+      res.json(data);
+      console.log("All guests for Lebanese: ", data);
+    });
+  });
+
+
+
+
+
+
 }; //end module.exports
 //POST guests not sure if this is correct or above
 // app.post("/api/guests", function(req,res){
