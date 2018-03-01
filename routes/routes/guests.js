@@ -14,13 +14,14 @@ module.exports = function(app, db) {
   });
 
   
-  app.get("/api/guests", function(req,res){
+  // app.get("/api/guests", function(req,res){
     
-    db.Guests.findAll()
-    .then(function(guests){
-      res.json(guests);
-    });
-      });
+  //   db.Guests.findAll()
+  //   .then(function(guests){
+  //     res.json(guests);
+  //   });
+  //     });
+
 
   app.post("/api/guests", function (req, res) {
     db.Guests.create({
@@ -35,23 +36,29 @@ module.exports = function(app, db) {
     })
   });
 
-  app.get("/api/guests", function (req, res) {
-       db.Author.findAll({
+  //should this be /api/guests/:event
+  // app.get("/api/guests", function (req, res) {
+    app.get("/api/guests/:event", function(req, res){
+       db.Guests.findAll({
       where: {
+        // event: req.params.event
         event: "Lebanese"
+        //should this be req.params.event
+        
       }
     }).then(function (data) {
       res.json(data);
       console.log("All guests for Lebanese: ", data);
     });
-  });
+});
+};//end module.exports
 
 
 
 
 
 
-}; //end module.exports
+
 //POST guests not sure if this is correct or above
 // app.post("/api/guests", function(req,res){
 //   var name = req.body.name;

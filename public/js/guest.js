@@ -60,38 +60,49 @@ $(function () {
 //When guestlist button on Lebanese card is clicked, calls to db, modal opens with info
   $("#guestlist_leb").on("click", function (event) {
     event.preventDefault();
-    // Function for creating a new list row for authors
-    function createAuthorRow(authorData) {
-      console.log(authorData);
+
+    //ajax call to find all guests where event = lebanese
+
+
+    // create functions for displaying data and add here
+    getGuests();
+    createGuestRow();
+    
+
+//open modal once data has been retrieved
+    $('#modal1').modal('open');
+    
+    });
+
+    // Function for creating a new table 
+    //problem is here: getting all guest data
+    function createGuestRow(guestData) {
+      console.log(guestData);
       var newTr = $("<tr>");
-      newTr.data("author", authorData);
-      newTr.append("<td>" + authorData.name + "</td>");
-      newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-      newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-      newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-      newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+      newTr.data("first_name", guestData);
+      // newTr.append("<td>" + guestData.first_name + "</td>");
       return newTr;
     }
 
-    // Function for retrieving authors and getting them ready to be rendered to the page
-    function getAuthors() {
-      $.get("/api/authors", function (data) {
+    // Function for retrieving guests and getting them ready to be rendered to the page
+    function getGuests() {
+      $.get("/api/guests", function (data) {
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
-          rowsToAdd.push(createAuthorRow(data[i]));
+          rowsToAdd.push(createGuestRow(data[i]));
         }
-        renderAuthorList(rowsToAdd);
+        renderGuestList(rowsToAdd);
         nameInput.val("");
       });
     }
 
-    // A function for rendering the list of authors to the page
-    function renderAuthorList(rows) {
-      authorList.children().not(":last").remove();
-      authorContainer.children(".alert").remove();
+    // A function for rendering the list of guests to the page
+    function renderGuestList(rows) {
+      $("tbody").children().not(":last").remove();
+      $(".guest-container").children(".alert").remove();
       if (rows.length) {
         console.log(rows);
-        authorList.prepend(rows);
+        $("tbody").prepend(rows);
       }
       else {
         renderEmpty();
@@ -99,12 +110,6 @@ $(function () {
     }
 
 
-
-
-//open modal once data has been retrieved
-    $('#modal1').modal('open');
-    
-    });
 
     
   });//end of document.ready
