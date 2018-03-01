@@ -17,6 +17,22 @@
 
     console.log(newGuest);
 
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Send the PUT request.
 
 
