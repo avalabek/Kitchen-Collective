@@ -1,4 +1,5 @@
-//$(function () {
+//wrap in an iife in order to avoid polluting global scope
+$(function () {
 
   $(document).ready(function(){
     $('.slider').slider();
@@ -19,21 +20,6 @@
     console.log(newGuest);
 
   
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Send the PUT request.
 
 
@@ -71,7 +57,7 @@
 
 
 
-//});//end of iife
+});//end of iife
 
 
 
