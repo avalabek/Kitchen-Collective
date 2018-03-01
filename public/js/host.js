@@ -21,6 +21,11 @@ $(function(){
     aftershow: function(){} //Function for after opening timepicker
   });
 
+  
+
+
+
+
   $("#submit").on("click", function(event){
     event.preventDefault();
       

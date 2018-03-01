@@ -33,7 +33,7 @@ module.exports = function(app, db) {
       console.log("New guest: ", req.body.first_name);
     })
   });
-} //end module.exports
+}; //end module.exports
 //POST guests not sure if this is correct or above
 // app.post("/api/guests", function(req,res){
 //   var name = req.body.name;
