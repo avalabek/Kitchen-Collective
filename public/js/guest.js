@@ -9,6 +9,7 @@
     event.preventDefault();
     console.log("HERE");
     var newGuest = {
+      event: $("#event").val(),
       first_name: $("#first_name").val(),
       last_name: $("#last_name").val(),
       email: $("#email").val(),

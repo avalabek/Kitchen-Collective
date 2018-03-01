@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true
       },
       event: {
-      type: DataTypes.STRING
+        type: DataTypes.STRING
       },
       
       first_name: {

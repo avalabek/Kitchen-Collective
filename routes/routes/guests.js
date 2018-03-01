@@ -24,6 +24,7 @@ module.exports = function(app, db) {
 
   app.post("/api/guests", function (req, res) {
     db.Guests.create({
+      event: req.body.event,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
