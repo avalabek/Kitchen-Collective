@@ -30,9 +30,11 @@
     event.preventDefault();
       
     var newHost = {
-    firstname: $("#first_name").val(),
+        firstname: $("#first_name").val(),
         lastname:$("#last_name").val(),
         cuisine:$("#cuisine").val(),
+        image:$("#image").val(),
+        charity:$("#charity").val(),
         email:$("#email").val(),
         address:$("#address").val(),
         date:$("#date").val(),
@@ -50,39 +52,38 @@
     }).then(
       function (res) {
         console.log("This is the new host" + res);
-        //the below isn't console.logging
         console.log("added new host to host: ", newHost);
 
-    var card = $("<div>");
-    card.addClass("card-image waves-effect waves-block waves-light");
+    // var card = $("<div>");
+    // card.addClass("card-image waves-effect waves-block waves-light");
 
-    var cardImage = $("<div>");
-    cardImage.addClass("card-image ");
+    // var cardImage = $("<div>");
+    // cardImage.addClass("card-image ");
     
-    var image = $("<img>");
-    image.attr("src", "images/manakeesh2.JPG");
+    // var image = $("<img>");
+    // image.attr("src", "images/manakeesh2.JPG");
     
-    var cardContent = $("<div>");
-    cardContent.addClass("card-content");
-    cardContent.attr("id", "eventinfo");
-    cardContent.text("Host: " newHost.first_name);
-    cardContent.append("<br>");
-    cardContent.text("Cuisine: " newHost.cuisine);
-    cardContent.append("<br>");
-    cardContent.text("Date: " newHost.date);
-    cardContent.append("<br>");
-    cardContent.text("Seats Remaining: " newHost.peoplecount);
-    cardContent.append("<br>");
+    // var cardContent = $("<div>");
+    // cardContent.addClass("card-content");
+    // cardContent.attr("id", "eventinfo");
+    // cardContent.text("Host: " newHost.first_name);
+    // cardContent.append("<br>");
+    // cardContent.text("Cuisine: " newHost.cuisine);
+    // cardContent.append("<br>");
+    // cardContent.text("Date: " newHost.date);
+    // cardContent.append("<br>");
+    // cardContent.text("Seats Remaining: " newHost.peoplecount);
+    // cardContent.append("<br>");
 
-    var revealSpan = $("<span>");
-    revealSpan.addClass("card-title activator grey-text text-darken-4");
+    // var revealSpan = $("<span>");
+    // revealSpan.addClass("card-title activator grey-text text-darken-4");
     
     
-     cardImage.append(image);
-     card.append(cardImage);
-     card.append(cardContent);
+    //  cardImage.append(image);
+    //  card.append(cardImage);
+    //  card.append(cardContent);
 
-     $("event").append(card);  
+    //  $("event").append(card);  
 
     // Reload the page to get the updated list
       location.reload();
@@ -105,6 +106,7 @@
        $("#first_name").val(""),
         $("#last_name").val(""),
         $("#cuisine").val(""),
+        $("#charity").val(""),
         $("#email").val(""),
         $("#address").val(""),
         $("#date").val(""),
