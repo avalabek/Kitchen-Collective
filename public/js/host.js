@@ -1,4 +1,5 @@
-// $(function(){
+//wrap in an iife in order to avoid polluting global scope
+$(function(){
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -115,7 +116,7 @@
 
  
 
-// });//end of iife
+ });//end of iife
 
 
 
