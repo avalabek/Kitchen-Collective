@@ -65,8 +65,8 @@ $(function () {
 
 
     // create functions for displaying data and add here
-    getGuests();
-    createGuestRow();
+    getGuests("Lebanese");
+   
     
 
 //open modal once data has been retrieved
@@ -77,22 +77,26 @@ $(function () {
     // Function for creating a new table 
     //problem is here: getting all guest data
     function createGuestRow(guestData) {
-      console.log(guestData);
+      console.log(guestData.first_name);
       var newTr = $("<tr>");
-      newTr.data("first_name", guestData);
-      // newTr.append("<td>" + guestData.first_name + "</td>");
-      return newTr;
+      
+      // newTr.data("first_name", guestData.first_name);
+      newTr.append("<td>" + guestData.first_name + "</td>");
+      
+       return newTr;
+      //  $(".guestsLebanese").append(newTr);
     }
+//this equals req.params.event
 
     // Function for retrieving guests and getting them ready to be rendered to the page
-    function getGuests() {
-      $.get("/api/guests", function (data) {
+    function getGuests(eventName) {
+      $.get("/api/guests/"+ eventName, function (data) {
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
           rowsToAdd.push(createGuestRow(data[i]));
         }
         renderGuestList(rowsToAdd);
-        nameInput.val("");
+        // nameInput.val("");
       });
     }
 

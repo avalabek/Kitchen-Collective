@@ -36,13 +36,14 @@ module.exports = function(app, db) {
     })
   });
 
-  //should this be /api/guests/:event
+  //should this be /api/guests/:event yes do this for dynamic creation
+  
   // app.get("/api/guests", function (req, res) {
     app.get("/api/guests/:event", function(req, res){
        db.Guests.findAll({
       where: {
-        // event: req.params.event
-        event: "Lebanese"
+        event: req.params.event
+        // event: 
         //should this be req.params.event
         
       }
