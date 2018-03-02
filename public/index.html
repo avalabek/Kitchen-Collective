@@ -15,25 +15,25 @@
   
 </head>
 <body>
-  
+
 
   <div class="navbar-fixed">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <div class="row">
-        <div class="col s12">
-          
-          <ul class="right hide-on-med-and-down" id="navnames">
-            <li><a href = "/">The Kitchen Collective</a></li>
-            <li><a href = "/about">About Us</a></li>
-            <li><a href = "/host">Become A Host</a></li>
-            <li><a href = "/donate">Donate</a></li>
-          </ul>
+    <nav class="transparent z-depth-0">
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s12">
+
+            <ul class="right hide-on-med-and-down" id="navnames">
+              <li><a href = "/">The Kitchen Collective</a></li>
+              <li><a href = "/about">About Us</a></li>
+              <li><a href = "/host">Become A Host</a></li>
+              <li><a href = "/donate">Donate</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-</div>
+    </nav>
+  </div>
 
 
 
@@ -42,7 +42,7 @@
     <div class="container" id="banner">
       <br><br>
       <p><img src="images/kc.png" width ="125" height = "125"></p>
-     
+
       <h1 class="header center" id="logo"> The <br> Kitchen Collective </h1><br><br>
       <div class="row center">
         <h4 class="header col s12"><strong>Gather. Cook. Give.</strong></h4>
@@ -74,7 +74,7 @@
   </div>
 
 
-    <div class="slider">
+  <div class="slider">
     <ul class="slides">
       <li>
         <img src="images/samplemenu.JPG"> 
@@ -127,7 +127,7 @@
       </li>
     </ul>
   </div>
-    
+
 
   <!-- <div class="carousel carousel-slider">
     <a class="carousel-item" href="#one!"><img src="images/samplemenu.JPG"></a>
@@ -152,12 +152,13 @@
 
 
   <div class="row">
-        <div class="col s12 m12">
-          <div class="icon-block">
-            <h2 class="center black-text" id="events"><p>- Upcoming Events - </p></h2>
-          </div>
-        </div>
+    <div class="col s12 m12">
+      <div class="icon-block" id="events">
+        <h2 class="center black-text"><p>- Upcoming Events - </p></h2>
+      </div>
+    </div>
   </div>
+
 
 <div class="row">
         <div class="col s4 m4">
@@ -368,65 +369,201 @@
   </div>
 <!-- end modal -->
 
-  <footer class="page-footer black">
-    <div class="container">
+  <div class="row" id="eventCards">
+    <div class="col s4 m4" >
+     <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="images/manakeesh2.JPG" height="300px">
+      </div>
+      <div class="card-content">
+        <p>Event: Lebanese</p>
+        <p>Date: 03/03/2018</p>
+        <p>Time: 1:00pm</p>
+        <p>Charity: </p>
+        <p>Seats Remaining: </p>
+        <br>
+
+        <span class="card-title activator grey-text text-darken-4">Click here to Register</span>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="guestlist">Guest List</button>
+
+      </div>
+
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <div class="row">
+
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="phone" type="text" class="validate">
+                <label for="phone">Phone</label>
+              </div>
+            </div>
+          </form
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="register">Register</button>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col s4 m4">
+   <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/french.jpg" height="300px">
+    </div>
+    <div class="card-content">
+      <p>Event: French</p>
+      <p>Date: 03/31/2018</p>
+      <p>Time: 3:00pm</p>
+      <p>Charity: </p>
+      <p>Seats Remaining: </p>
+      <br>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons right"><br></i>Click here to Register</span>
+      <br>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="guestlist">Guest List</button>
+    </div>
+
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Contact Us</h5>
-          <p class="grey-text text-lighten-4">jackiegparks@gmail.com <br> sirine.khaled@yahoo.com</p>
-        </div>
-        
-        <div class="row center">
-           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-               <input type="hidden" name="cmd" value="_s-xclick">
-               <input type="hidden" name="hosted_button_id" value="K7N6ANSL2CANE">
-               <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-               <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-           </form>
-        </div>
-       
-        
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="phone" type="text" class="validate">
+              <label for="phone">Phone</label>
+            </div>
+          </div>
+
+        </form>
       </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="register">Register</button>
+
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Miriam, Andreya, Mike</a>
+  </div>
+</div>
+
+<!-- <div class="row"> -->
+  <div class="col s4 m4">
+   <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/mexican.jpg" height="300px">
+    </div>
+
+    <div class="card-content">
+      <p>Event: Mexican</p>
+      <p>Date: 04/14/2018</p>
+      <p>Time: 11:00am</p>
+      <p>Charity: </p>
+      <p>Seats Remaining: </p>
+      <br>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons right"><br></i>Click here to Register</span>
+      <br>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="guestlist">Guest List</button>
+    </div>
+
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <div class="row">
+
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="phone" type="text" >
+              <label for="phone">Phone</label>
+            </div>
+          </div>
+        </form>
       </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="register">Register</button>
     </div>
-  </footer>
+  </div>
+</div>
+<!-- </div> -->
 
-  <script src="js/guest.js" type="text/javascript">
-    
-
-    // $(document).ready(function(){
-    // $('.slider').slider();
-    // });
-
-//     $('.carousel.carousel-slider').carousel({fullWidth: true});
-
-   
-    
-//     $(document).ready(function(){
-//       $('.carousel').carousel();
-//     });
-
-//     $('.carousel').carousel({
-//     padding: 200   
-    
-// });
-
-//     autoplay()   
-//     function autoplay() {
-//         $('.carousel').carousel('next');
-//         setTimeout(autoplay, 4500);
-//     }
-        
-
-  </script>
+</div>
 
 
-  <!--  Scripts-->
+
+<footer class="page-footer black">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Contact Us</h5>
+        <p class="grey-text text-lighten-4">jackiegparks@gmail.com <br> sirine.khaled@yahoo.com</p>
+      </div>
+
+      <div class="row center">
+       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+         <input type="hidden" name="cmd" value="_s-xclick">
+         <input type="hidden" name="hosted_button_id" value="K7N6ANSL2CANE">
+         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+       </form>
+     </div>
 
 
-  </body>
+   </div>
+ </div>
+ <div class="footer-copyright">
+  <div class="container">
+    Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Miriam, Andreya, Mike</a>
+  </div>
+</div>
+</footer>
+
+<script src="js/guest.js" type="text/javascript"></script>
+</body>
 </html>

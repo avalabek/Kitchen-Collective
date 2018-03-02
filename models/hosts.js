@@ -21,6 +21,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
         
       },
+      image: {
+        type: DataTypes.STRING
+        
+      },
+      charity: {
+        type: DataTypes.STRING
+        
+      },
       email: {
         type: DataTypes.STRING
       },

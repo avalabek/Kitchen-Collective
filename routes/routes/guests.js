@@ -14,6 +14,7 @@ module.exports = function(app, db) {
   });
 
   
+
   // app.get("/api/guests", function(req,res){
     
   //   db.Guests.findAll()
@@ -22,6 +23,7 @@ module.exports = function(app, db) {
   //   });
   //     });
 
+  
 
   app.post("/api/guests", function (req, res) {
     db.Guests.create({
@@ -29,12 +31,14 @@ module.exports = function(app, db) {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      phone: req.body.phone
+      phone: req.body.phone,
+      event:req.body.event
     }).then(function (result) {
       res.json(result);
       console.log("New guest: ", req.body.first_name);
     })
   });
+
 
   //should this be /api/guests/:event yes do this for dynamic creation
   
@@ -91,3 +95,5 @@ module.exports = function(app, db) {
 // });
 // //when a new guest is posted, number must also be taken from event maximum
 // };//end module.exports
+};
+
